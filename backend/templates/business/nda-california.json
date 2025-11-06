@@ -1,0 +1,89 @@
+{
+  "id": "nda-california-2024",
+  "title": "California Non-Disclosure Agreement",
+  "category": "Business",
+  "jurisdiction": "California",
+  "price": 9.99,
+  "description": "Standard mutual non-disclosure agreement for California business relationships. Protects confidential information shared between parties.",
+  "placeholders": [
+    {
+      "name": "disclosing_party",
+      "label": "Disclosing Party Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Full legal name of the disclosing party"
+    },
+    {
+      "name": "disclosing_address",
+      "label": "Disclosing Party Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Full business address"
+    },
+    {
+      "name": "receiving_party",
+      "label": "Receiving Party Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Full legal name of the receiving party"
+    },
+    {
+      "name": "receiving_address",
+      "label": "Receiving Party Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Full business address"
+    },
+    {
+      "name": "effective_date",
+      "label": "Effective Date",
+      "type": "date",
+      "required": true,
+      "default": "today"
+    },
+    {
+      "name": "purpose",
+      "label": "Purpose of Disclosure",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g., To evaluate potential business relationship"
+    },
+    {
+      "name": "term_years",
+      "label": "Confidentiality Period (years)",
+      "type": "number",
+      "required": true,
+      "default": 5,
+      "min": 1,
+      "max": 10
+    }
+  ],
+  "content": {
+    "html": "<h1>MUTUAL NON-DISCLOSURE AGREEMENT</h1>\n\n<p>This Mutual Non-Disclosure Agreement (the \"Agreement\") is entered into as of {{effective_date}} (the \"Effective Date\") by and between:</p>\n\n<p><strong>Disclosing Party:</strong><br>\n{{disclosing_party}}<br>\n{{disclosing_address}}</p>\n\n<p>and</p>\n\n<p><strong>Receiving Party:</strong><br>\n{{receiving_party}}<br>\n{{receiving_address}}</p>\n\n<p>collectively referred to as the \"Parties.\"</p>\n\n<h2>1. Purpose</h2>\n<p>The Parties agree to enter into this Agreement for the purpose of {{purpose}} (the \"Purpose\").</p>\n\n<h2>2. Definition of Confidential Information</h2>\n<p>\"Confidential Information\" shall mean any and all information disclosed by one Party to the other Party, whether orally or in writing, that is marked as confidential or that a reasonable person would understand to be confidential given the nature of the information and the circumstances of disclosure.</p>\n\n<h2>3. Obligations</h2>\n<p>Each Party agrees to: (a) hold the Confidential Information in strict confidence; (b) use the Confidential Information solely for the Purpose; (c) not disclose the Confidential Information to any third party without prior written consent; and (d) take all reasonable precautions to protect the Confidential Information.</p>\n\n<h2>4. Term</h2>\n<p>This Agreement shall remain in effect for a period of {{term_years}} year(s) from the Effective Date.</p>\n\n<h2>5. Return of Information</h2>\n<p>Upon termination of this Agreement, each Party shall promptly return or destroy all materials containing the other Party's Confidential Information.</p>\n\n<h2>6. Governing Law</h2>\n<p>This Agreement shall be governed by and construed in accordance with the laws of the State of California.</p>\n\n<div class=\"signature-block\">\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Disclosing Party</div>\n</div>\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Receiving Party</div>\n</div>\n</div>\n\n<div class=\"date-field\">\n<div class=\"date-line\"></div>\n<div class=\"signature-label\">Date</div>\n</div>",
+    "docx_template": ""
+  },
+  "source": {
+    "url": "https://www.docracy.com/0.1x/nda-california-mutual",
+    "license": "Creative Commons BY-SA",
+    "attribution": "Originally provided by Docracy",
+    "modified": "Updated and adapted for ContractFabrico format"
+  },
+  "preview": {
+    "sample_data": {
+      "disclosing_party": "Acme Corporation",
+      "disclosing_address": "123 Business Street, San Francisco, CA 94102",
+      "receiving_party": "Startup Innovations Inc.",
+      "receiving_address": "456 Tech Avenue, Palo Alto, CA 94301",
+      "effective_date": "2024-01-01",
+      "purpose": "To evaluate potential business relationship and investment opportunities",
+      "term_years": 5
+    }
+  },
+  "metadata": {
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "version": "1.0",
+    "downloads": 0,
+    "rating": 0
+  }
+}
