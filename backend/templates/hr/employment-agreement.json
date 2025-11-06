@@ -1,0 +1,115 @@
+{
+  "id": "employment-agreement-ca-2024",
+  "title": "California Employment Agreement",
+  "category": "HR",
+  "jurisdiction": "California",
+  "price": 14.99,
+  "description": "Comprehensive employment agreement compliant with California labor laws. Includes at-will employment, compensation, benefits, and termination provisions.",
+  "placeholders": [
+    {
+      "name": "employee_name",
+      "label": "Employee Full Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Employee's full legal name"
+    },
+    {
+      "name": "employee_address",
+      "label": "Employee Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Employee's full address"
+    },
+    {
+      "name": "employer_name",
+      "label": "Employer Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Legal business name of employer"
+    },
+    {
+      "name": "employer_address",
+      "label": "Employer Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Employer's business address"
+    },
+    {
+      "name": "job_title",
+      "label": "Job Title",
+      "type": "text",
+      "required": true,
+      "placeholder": "Position title"
+    },
+    {
+      "name": "start_date",
+      "label": "Start Date",
+      "type": "date",
+      "required": true,
+      "placeholder": "First day of employment"
+    },
+    {
+      "name": "annual_salary",
+      "label": "Annual Salary",
+      "type": "number",
+      "required": true,
+      "placeholder": "Annual base salary in USD",
+      "min": 0
+    },
+    {
+      "name": "pay_frequency",
+      "label": "Pay Frequency",
+      "type": "select",
+      "required": true,
+      "options": ["Weekly", "Bi-weekly", "Monthly", "Semi-monthly"],
+      "default": "Bi-weekly"
+    },
+    {
+      "name": "work_schedule",
+      "label": "Work Schedule",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g., Monday-Friday, 9:00 AM - 5:00 PM"
+    },
+    {
+      "name": "probation_period",
+      "label": "Probation Period (days)",
+      "type": "number",
+      "required": true,
+      "default": 90,
+      "min": 30,
+      "max": 180
+    }
+  ],
+  "content": {
+    "html": "<h1>EMPLOYMENT AGREEMENT</h1>\n\n<p>This Employment Agreement (the \"Agreement\") is made effective as of {{start_date}} (the \"Effective Date\") by and between:</p>\n\n<p><strong>Employer:</strong><br>\n{{employer_name}}<br>\n{{employer_address}}</p>\n\n<p>and</p>\n\n<p><strong>Employee:</strong><br>\n{{employee_name}}<br>\n{{employee_address}}</p>\n\n<h2>1. POSITION AND DUTIES</h2>\n<p>Employee is hired as {{job_title}}. Employee shall perform all duties and responsibilities assigned by Employer, including those that may be assigned from time to time.</p>\n\n<h2>2. EMPLOYMENT AT-WILL</h2>\n<p>This Agreement constitutes at-will employment. Either Employee or Employer may terminate the employment relationship at any time, with or without cause or notice.</p>\n\n<h2>3. COMPENSATION</h2>\n<p>Employer shall pay Employee an annual salary of ${{annual_salary}}, payable {{pay_frequency}}, subject to customary payroll deductions and withholdings.</p>\n\n<h2>4. WORK SCHEDULE</h2>\n<p>Employee's regular work schedule shall be {{work_schedule}}. Employee may be required to work additional hours as necessary to fulfill job responsibilities.</p>\n\n<h2>5. BENEFITS</h2>\n<p>Employee shall be eligible to participate in benefit programs as established by Employer, including health insurance, retirement plans, and paid time off, subject to plan terms and eligibility requirements.</p>\n\n<h2>6. PROBATIONARY PERIOD</h2>\n<p>The first {{probation_period}} days of employment shall be considered a probationary period. During this time, Employer may terminate employment for any reason.</p>\n\n<h2>7. CONFIDENTIALITY</h2>\n<p>Employee shall maintain confidentiality of all proprietary and confidential information belonging to Employer, both during and after employment.</p>\n\n<h2>8. RETURN OF PROPERTY</h2>\n<p>Upon termination of employment, Employee shall return all property belonging to Employer, including documents, equipment, and access credentials.</p>\n\n<h2>9. ENTIRE AGREEMENT</h2>\n<p>This Agreement constitutes the entire agreement between the parties and supersedes all prior discussions and understandings.</p>\n\n<h2>10. GOVERNING LAW</h2>\n<p>This Agreement shall be governed by and construed in accordance with the laws of the State of California.</p>\n\n<div class=\"signature-block\">\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Employer</div>\n</div>\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Employee</div>\n</div>\n</div>\n\n<div class=\"date-field\">\n<div class=\"date-line\"></div>\n<div class=\"signature-label\">Date</div>\n</div>",
+    "docx_template": ""
+  },
+  "source": {
+    "url": "https://www.jotform.com/pdf-templates/contracts/employment-agreement",
+    "license": "Creative Commons BY",
+    "attribution": "Originally provided by Jotform Legal Templates",
+    "modified": "Updated for California compliance and ContractFabrico format"
+  },
+  "preview": {
+    "sample_data": {
+      "employee_name": "Sarah Martinez",
+      "employee_address": "789 Oak Street, Los Angeles, CA 90001",
+      "employer_name": "Digital Innovations Inc.",
+      "employer_address": "321 Tech Park Drive, Irvine, CA 92612",
+      "job_title": "Senior Software Engineer",
+      "start_date": "2024-02-01",
+      "annual_salary": 120000,
+      "pay_frequency": "Bi-weekly",
+      "work_schedule": "Monday-Friday, 9:00 AM - 6:00 PM",
+      "probation_period": 90
+    }
+  },
+  "metadata": {
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "version": "1.0",
+    "downloads": 0,
+    "rating": 0
+  }
+}
