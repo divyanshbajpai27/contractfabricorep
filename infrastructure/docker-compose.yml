@@ -1,0 +1,115 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: contractfabrico-db
+    environment:
+      POSTGRES_DB: contractfabrico
+      POSTGRES_USER: contractfabrico_user
+      POSTGRES_PASSWORD: contractfabrico_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - contractfabrico-network
+    restart: unless-stopped
+
+  # Redis (for caching and sessions)
+  redis:
+    image: redis:7-alpine
+    container_name: contractfabrico-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - contractfabrico-network
+    restart: unless-stopped
+
+  # MinIO (S3-compatible storage for development)
+  minio:
+    image: minio/minio:latest
+    container_name: contractfabrico-storage
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin123
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - contractfabrico-network
+    command: server /data --console-address ":9001"
+    restart: unless-stopped
+
+  # Backend API
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: contractfabrico-api
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DATABASE_URL: postgresql://contractfabrico_user:contractfabrico_password@postgres:5432/contractfabrico
+      JWT_SECRET: your-super-secret-jwt-key-change-in-production
+      ADMIN_EMAIL: admin@contractfabrico.com
+      ADMIN_PASSWORD: secure-admin-password-change-this
+      STRIPE_SECRET_KEY: sk_test_your_stripe_secret_key_here
+      STRIPE_WEBHOOK_SECRET: whsec_your_stripe_webhook_secret_here
+      R2_ACCOUNT_ID: your-r2-account-id
+      R2_ACCESS_KEY_ID: your-r2-access-key-id
+      R2_SECRET_ACCESS_KEY: your-r2-secret-access-key
+      R2_BUCKET_NAME: contractfabrico-docs
+      R2_ENDPOINT: http://minio:9000
+      SENDGRID_API_KEY: SG.your-sendgrid-api-key-here
+      FROM_EMAIL: noreply@contractfabrico.com
+      CORS_ORIGIN: http://localhost:3000
+    ports:
+      - "3001:3001"
+    volumes:
+      - ../backend:/app
+      - /app/node_modules
+    depends_on:
+      - postgres
+      - minio
+    networks:
+      - contractfabrico-network
+    restart: unless-stopped
+    command: npm run dev
+
+  # Frontend (for development)
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile.dev
+    container_name: contractfabrico-frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:3001
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: pk_test_your_stripe_publishable_key_here
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../frontend:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - backend
+    networks:
+      - contractfabrico-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:
+
+networks:
+  contractfabrico-network:
+    driver: bridge

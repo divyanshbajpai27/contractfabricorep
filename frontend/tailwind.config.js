@@ -1,0 +1,22 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#0F172A',
+        accent: '#14B8A6',
+        background: '#ffffff',
+      },
+      fontFamily: {
+        heading: ['Inter', 'sans-serif'],
+        body: ['Roboto', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+}

@@ -1,0 +1,54 @@
+services:
+  # Web Service (Backend API)
+  - type: web
+    name: contractfabrico-api
+    env: node
+    plan: starter
+    buildCommand: "cd backend && npm install && npm run build"
+    startCommand: "cd backend && npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: DATABASE_URL
+        fromDatabase:
+          name: contractfabrico-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@contractfabrico.com
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: R2_ACCOUNT_ID
+        sync: false
+      - key: R2_ACCESS_KEY_ID
+        sync: false
+      - key: R2_SECRET_ACCESS_KEY
+        sync: false
+      - key: R2_BUCKET_NAME
+        value: contractfabrico-docs
+      - key: R2_ENDPOINT
+        sync: false
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: FROM_EMAIL
+        value: noreply@contractfabrico.com
+      - key: CORS_ORIGIN
+        value: https://contractfabrico.com
+    healthCheckPath: /api/health
+    autoDeploy: true
+
+  # PostgreSQL Database
+  - type: pserv
+    name: contractfabrico-db
+    plan: starter
+    databaseName: contractfabrico
+    user: contractfabrico_user
+
+# Static Site (Frontend) - Deployed to Vercel separately

@@ -1,0 +1,104 @@
+{
+  "id": "partnership-agreement-ca-2024",
+  "title": "California Partnership Agreement",
+  "category": "Business",
+  "jurisdiction": "California",
+  "price": 14.99,
+  "description": "Comprehensive partnership agreement for California businesses. Defines roles, responsibilities, profit sharing, and dispute resolution.",
+  "placeholders": [
+    {
+      "name": "partnership_name",
+      "label": "Partnership Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Legal name of the partnership"
+    },
+    {
+      "name": "partner1_name",
+      "label": "Partner 1 Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Full legal name"
+    },
+    {
+      "name": "partner1_address",
+      "label": "Partner 1 Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Full address"
+    },
+    {
+      "name": "partner2_name",
+      "label": "Partner 2 Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Full legal name"
+    },
+    {
+      "name": "partner2_address",
+      "label": "Partner 2 Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Full address"
+    },
+    {
+      "name": "effective_date",
+      "label": "Effective Date",
+      "type": "date",
+      "required": true,
+      "default": "today"
+    },
+    {
+      "name": "business_purpose",
+      "label": "Business Purpose",
+      "type": "text",
+      "required": true,
+      "placeholder": "Description of the partnership's business activities"
+    },
+    {
+      "name": "initial_capital",
+      "label": "Initial Capital Contribution",
+      "type": "number",
+      "required": true,
+      "placeholder": "Total initial capital amount",
+      "min": 0
+    },
+    {
+      "name": "profit_sharing",
+      "label": "Profit Sharing Ratio",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g., 50/50 or 60/40"
+    }
+  ],
+  "content": {
+    "html": "<h1>PARTNERSHIP AGREEMENT</h1>\n\n<p>This Partnership Agreement (the \"Agreement\") is made and entered into as of {{effective_date}} (the \"Effective Date\") by and between the undersigned parties.</p>\n\n<h2>PARTIES</h2>\n<p><strong>Partner 1:</strong> {{partner1_name}}<br>\nAddress: {{partner1_address}}</p>\n\n<p><strong>Partner 2:</strong> {{partner2_name}}<br>\nAddress: {{partner2_address}}</p>\n\n<p>Hereby agree to form a general partnership under the laws of the State of California.</p>\n\n<h2>1. PARTNERSHIP NAME AND PURPOSE</h2>\n<p>The partnership shall be known as \"{{partnership_name}}\" (the \"Partnership\"). The primary business purpose of the Partnership shall be {{business_purpose}}.</p>\n\n<h2>2. CAPITAL CONTRIBUTIONS</h2>\n<p>The Partners shall contribute an initial total capital of ${{initial_capital}}. Profits and losses shall be shared according to the ratio of {{profit_sharing}} between Partner 1 and Partner 2 respectively.</p>\n\n<h2>3. MANAGEMENT AND AUTHORITY</h2>\n<p>Both Partners shall have equal authority to manage and bind the Partnership in ordinary business matters. Major decisions requiring unanimous consent include: (a) admission of new partners; (b) sale of Partnership assets; (c) incurring debt beyond $10,000; (d) amendment of this Agreement.</p>\n\n<h2>4. DUTIES OF PARTNERS</h2>\n<p>Each Partner shall devote reasonable time and attention to Partnership business, act in good faith, and maintain accurate books and records.</p>\n\n<h2>5. ACCOUNTING</h2>\n<p>Partnership shall maintain fiscal year ending December 31. Annual financial statements shall be prepared and provided to each Partner within 90 days of year-end.</p>\n\n<h2>6. DISTRIBUTIONS</h2>\n<p>Profits shall be distributed quarterly or as otherwise agreed by the Partners. No distributions shall be made if Partnership liabilities exceed assets.</p>\n\n<h2>7. TERM AND TERMINATION</h2>\n<p>This Agreement shall continue until terminated by: (a) mutual agreement of Partners; (b) death or incapacity of a Partner; (c) bankruptcy of a Partner; or (d) expiration of specified term.</p>\n\n<h2>8. DISSOLUTION</h2>\n<p>Upon termination, Partnership assets shall be liquidated, debts paid, and remaining assets distributed according to profit-sharing ratio.</p>\n\n<h2>9. DISPUTE RESOLUTION</h2>\n<p>Disputes shall first be addressed through good faith negotiations. If unresolved, parties shall pursue mediation before litigation.</p>\n\n<h2>10. GOVERNING LAW</h2>\n<p>This Agreement shall be governed by California law, excluding conflict of law principles.</p>\n\n<div class=\"signature-block\">\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">{{partner1_name}}</div>\n</div>\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">{{partner2_name}}</div>\n</div>\n</div>\n\n<div class=\"date-field\">\n<div class=\"date-line\"></div>\n<div class=\"signature-label\">Date</div>\n</div>",
+    "docx_template": ""
+  },
+  "source": {
+    "url": "https://www.avodocs.com/partnership-agreement-template",
+    "license": "MIT License",
+    "attribution": "Originally provided by Avodocs",
+    "modified": "Updated for California jurisdiction and ContractFabrico format"
+  },
+  "preview": {
+    "sample_data": {
+      "partnership_name": "Tech Solutions Partnership",
+      "partner1_name": "John Smith",
+      "partner1_address": "123 Innovation Drive, San Jose, CA 95112",
+      "partner2_name": "Jane Johnson",
+      "partner2_address": "456 Startup Boulevard, Mountain View, CA 94043",
+      "effective_date": "2024-01-15",
+      "business_purpose": "Software development and technology consulting services",
+      "initial_capital": 50000,
+      "profit_sharing": "50/50"
+    }
+  },
+  "metadata": {
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "version": "1.0",
+    "downloads": 0,
+    "rating": 0
+  }
+}

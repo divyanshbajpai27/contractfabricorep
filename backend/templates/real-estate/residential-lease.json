@@ -1,0 +1,115 @@
+{
+  "id": "residential-lease-ca-2024",
+  "title": "California Residential Lease Agreement",
+  "category": "Real Estate",
+  "jurisdiction": "California",
+  "price": 16.99,
+  "description": "Comprehensive residential lease agreement compliant with California landlord-tenant laws. Includes rent, security deposit, maintenance, and termination provisions.",
+  "placeholders": [
+    {
+      "name": "landlord_name",
+      "label": "Landlord Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Landlord's full legal name"
+    },
+    {
+      "name": "landlord_address",
+      "label": "Landlord Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Landlord's mailing address"
+    },
+    {
+      "name": "tenant_name",
+      "label": "Tenant Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Tenant's full legal name"
+    },
+    {
+      "name": "property_address",
+      "label": "Property Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Full address of rental property"
+    },
+    {
+      "name": "lease_start",
+      "label": "Lease Start Date",
+      "type": "date",
+      "required": true,
+      "placeholder": "When tenancy begins"
+    },
+    {
+      "name": "lease_end",
+      "label": "Lease End Date",
+      "type": "date",
+      "required": true,
+      "placeholder": "When tenancy ends"
+    },
+    {
+      "name": "monthly_rent",
+      "label": "Monthly Rent",
+      "type": "number",
+      "required": true,
+      "placeholder": "Monthly rent amount in USD",
+      "min": 0
+    },
+    {
+      "name": "security_deposit",
+      "label": "Security Deposit",
+      "type": "number",
+      "required": true,
+      "placeholder": "Security deposit amount",
+      "min": 0
+    },
+    {
+      "name": "late_fee",
+      "label": "Late Fee",
+      "type": "number",
+      "required": true,
+      "placeholder": "Late payment fee amount",
+      "min": 0
+    },
+    {
+      "name": "pets_allowed",
+      "label": "Pets Allowed",
+      "type": "select",
+      "required": true,
+      "options": ["Yes", "No"],
+      "default": "No"
+    }
+  ],
+  "content": {
+    "html": "<h1>RESIDENTIAL LEASE AGREEMENT</h1>\n\n<p>This Residential Lease Agreement (the \"Lease\") is made and entered into on {{lease_start}} by and between:</p>\n\n<p><strong>Landlord:</strong><br>\n{{landlord_name}}<br>\n{{landlord_address}}</p>\n\n<p>and</p>\n\n<p><strong>Tenant:</strong><br>\n{{tenant_name}}</p>\n\n<p>(collectively referred to as the \"Parties\").</p>\n\n<h2>1. PREMISES</h2>\n<p>Landlord agrees to rent to Tenant and Tenant agrees to rent from Landlord the residential property located at:</p>\n\n<blockquote><strong>{{property_address}}</strong> (the \"Premises\")</blockquote>\n\n<h2>2. TERM</h2>\n<p>The term of this Lease shall begin on {{lease_start}} and end on {{lease_end}} (the \"Term\").</p>\n\n<h2>3. RENT</h2>\n<p>Tenant shall pay monthly rent of ${{monthly_rent}}, payable in advance on the first day of each month. Rent shall be paid to Landlord at the address specified above.</p>\n\n<h2>4. SECURITY DEPOSIT</h2>\n<p>Tenant shall pay a security deposit of ${{security_deposit}} upon execution of this Lease. The security deposit shall be returned within 21 days of lease termination, less deductions for damages beyond normal wear and tear.</p>\n\n<h2>5. LATE PAYMENTS</h2>\n<p>If rent is not received within 5 days of the due date, Tenant shall pay a late fee of ${{late_fee}}.</p>\n\n<h2>6. UTILITIES</h2>\n<p>Tenant shall be responsible for all utilities and services to the Premises, including electricity, gas, water, sewer, and trash removal.</p>\n\n<h2>7. MAINTENANCE AND REPAIRS</h2>\n<p>Tenant shall keep the Premises clean and in good condition. Tenant shall promptly notify Landlord of any needed repairs or maintenance.</p>\n\n<h2>8. PETS</h2>\n<p>{{#pets_allowed}}Pets are allowed with prior written consent from Landlord and payment of a pet deposit of $500.{{/pets_allowed}}{{^pets_allowed}}No pets are allowed on the Premises without prior written consent from Landlord.{{/pets_allowed}}</p>\n\n<h2>9. ASSIGNMENT AND SUBLETTING</h2>\n<p>Tenant shall not assign this Lease or sublet the Premises without prior written consent from Landlord.</p>\n\n<h2>10. ACCESS TO PREMISES</h2>\n<p>Landlord may enter the Premises at reasonable times with 24 hours notice to inspect, repair, or show the property to prospective tenants or buyers.</p>\n\n<h2>11. DEFAULT</h2>\n<p>If Tenant fails to pay rent or breaches any provision of this Lease, Landlord may terminate this Lease and take possession of the Premises.</p>\n\n<h2>12. HOLD HARMLESS</h2>\n<p>Landlord shall not be liable for any damage or injury to Tenant or Tenant's guests, except for damage or injury caused by Landlord's negligence.</p>\n\n<h2>13. GOVERNING LAW</h2>\n<p>This Lease shall be governed by and construed in accordance with the laws of the State of California.</p>\n\n<h2>14. ENTIRE AGREEMENT</h2>\n<p>This Lease constitutes the entire agreement between the Parties and supersedes all prior negotiations and understandings.</p>\n\n<div class=\"signature-block\">\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Landlord</div>\n</div>\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Tenant</div>\n</div>\n</div>\n\n<div class=\"date-field\">\n<div class=\"date-line\"></div>\n<div class=\"signature-label\">Date</div>\n</div>",
+    "docx_template": ""
+  },
+  "source": {
+    "url": "https://www.docracy.com/california-residential-lease-agreement",
+    "license": "Creative Commons BY-SA",
+    "attribution": "Originally provided by Docracy",
+    "modified": "Updated for California compliance and ContractFabrico format"
+  },
+  "preview": {
+    "sample_data": {
+      "landlord_name": "Robert Properties Inc.",
+      "landlord_address": "100 Property Management Way, Los Angeles, CA 90067",
+      "tenant_name": "Jennifer Williams",
+      "property_address": "456 Oak Avenue, Apt 2B, Santa Monica, CA 90401",
+      "lease_start": "2024-03-01",
+      "lease_end": "2025-02-28",
+      "monthly_rent": 2500,
+      "security_deposit": 5000,
+      "late_fee": 100,
+      "pets_allowed": "No"
+    }
+  },
+  "metadata": {
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "version": "1.0",
+    "downloads": 0,
+    "rating": 0
+  }
+}
