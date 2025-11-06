@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Template {
+  id           String   @id @default(cuid())
+  title        String
+  category     String
+  jurisdiction String   @default("California")
+  price        Float
+  description  String
+  placeholders Json     // Template placeholder definitions
+  content      Json     // Template content with HTML and optional DOCX
+  source       Json     // Source attribution information
+  metadata     Json     // Template metadata (downloads, rating, etc.)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  orders       Order[]
+
+  @@map("templates")
+}
+
+model Order {
+  id              String   @id @default(cuid())
+  templateId      String
+  template        Template @relation(fields: [templateId], references: [id])
+  customerEmail   String
+  formData        Json     // User submitted form data
+  stripePaymentId String   @unique
+  amount          Float
+  status          String   @default("pending") // pending, paid, failed, refunded
+  pdfUrl          String?  // Cloudflare R2 URL
+  docxUrl         String?  // Cloudflare R2 URL
+  downloadExpiry  DateTime // 7 days from creation
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("orders")
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // Hashed password
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("admins")
+}
+
+model TemplateCache {
+  id          String   @id @default(cuid())
+  templateId  String   @unique
+  template    Json     // Cached template data
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+
+  @@map("template_cache")
+}
