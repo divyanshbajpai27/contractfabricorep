@@ -1,0 +1,112 @@
+{
+  "id": "freelance-services-agreement-2024",
+  "title": "Freelance Services Agreement",
+  "category": "Freelance",
+  "jurisdiction": "California",
+  "price": 12.99,
+  "description": "Professional services agreement for freelancers and independent contractors. Defines scope, payment terms, deliverables, and intellectual property rights.",
+  "placeholders": [
+    {
+      "name": "client_name",
+      "label": "Client Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Legal name of the client company"
+    },
+    {
+      "name": "client_address",
+      "label": "Client Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Client's business address"
+    },
+    {
+      "name": "freelancer_name",
+      "label": "Freelancer Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Freelancer's full legal name"
+    },
+    {
+      "name": "freelancer_address",
+      "label": "Freelancer Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Freelancer's address"
+    },
+    {
+      "name": "project_description",
+      "label": "Project Description",
+      "type": "text",
+      "required": true,
+      "placeholder": "Detailed description of services to be provided"
+    },
+    {
+      "name": "start_date",
+      "label": "Project Start Date",
+      "type": "date",
+      "required": true,
+      "placeholder": "When work begins"
+    },
+    {
+      "name": "completion_date",
+      "label": "Project Completion Date",
+      "type": "date",
+      "required": true,
+      "placeholder": "Expected completion date"
+    },
+    {
+      "name": "total_fee",
+      "label": "Total Project Fee",
+      "type": "number",
+      "required": true,
+      "placeholder": "Total compensation in USD",
+      "min": 0
+    },
+    {
+      "name": "payment_schedule",
+      "label": "Payment Schedule",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g., 50% upfront, 50% upon completion"
+    },
+    {
+      "name": "deliverables",
+      "label": "Key Deliverables",
+      "type": "text",
+      "required": true,
+      "placeholder": "List of specific deliverables"
+    }
+  ],
+  "content": {
+    "html": "<h1>FREELANCE SERVICES AGREEMENT</h1>\n\n<p>This Freelance Services Agreement (the \"Agreement\") is entered into as of {{start_date}} (the \"Effective Date\") by and between:</p>\n\n<p><strong>Client:</strong><br>\n{{client_name}}<br>\n{{client_address}}</p>\n\n<p>and</p>\n\n<p><strong>Freelancer:</strong><br>\n{{freelancer_name}}<br>\n{{freelancer_address}}</p>\n\n<h2>1. SERVICES</h2>\n<p>Freelancer agrees to provide the following services (the \"Services\"):\n\n<blockquote><em>{{project_description}}</em></blockquote></p>\n\n<h2>2. DELIVERABLES</h2>\n<p>Freelancer shall deliver the following items to Client (the \"Deliverables\"):\n\n<blockquote><em>{{deliverables}}</em></blockquote></p>\n\n<h2>3. TIMELINE</h2>\n<p>Services shall commence on {{start_date}} and be completed by {{completion_date}} (the \"Completion Date\").</p>\n\n<h2>4. COMPENSATION</h2>\n<p>Client shall pay Freelancer a total fee of ${{total_fee}} (the \"Total Fee\") according to the following schedule: {{payment_schedule}}.</p>\n\n<h2>5. INDEPENDENT CONTRACTOR</h2>\n<p>Freelancer is an independent contractor, not an employee of Client. Freelancer is responsible for all taxes, insurance, and other obligations associated with self-employment.</p>\n\n<h2>6. INTELLECTUAL PROPERTY</h2>\n<p>Upon receipt of full payment, Freelancer assigns all rights, title, and interest in the Deliverables to Client. Prior to full payment, Freelancer retains all rights.</p>\n\n<h2>7. CONFIDENTIALITY</h2>\n<p>Freelancer agrees to keep confidential all non-public information of Client and not to disclose such information to any third party.</p>\n\n<h2>8. REVISIONS</h2>\n<p>Client shall be entitled to two rounds of revisions to the Deliverables at no additional charge. Additional revisions shall be billed at Freelancer's standard hourly rate.</p>\n\n<h2>9. TERMINATION</h2>\n<p>Either party may terminate this Agreement with 7 days written notice. Client shall pay for all work completed prior to termination.</p>\n\n<h2>10. WARRANTY</h2>\n<p>Freelancer warrants that Deliverables will be free from defects and will conform to the specifications outlined in this Agreement.</p>\n\n<h2>11. LIMITATION OF LIABILITY</h2>\n<p>Freelancer's total liability under this Agreement shall not exceed the Total Fee paid by Client.</p>\n\n<h2>12. GOVERNING LAW</h2>\n<p>This Agreement shall be governed by and construed in accordance with the laws of the State of California.</p>\n\n<div class=\"signature-block\">\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Client</div>\n</div>\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Freelancer</div>\n</div>\n</div>\n\n<div class=\"date-field\">\n<div class=\"date-line\"></div>\n<div class=\"signature-label\">Date</div>\n</div>",
+    "docx_template": ""
+  },
+  "source": {
+    "url": "https://www.onecle.com/contracts/freelance-services-agreement",
+    "license": "Public Domain",
+    "attribution": "Originally sourced from OneCLE legal contracts",
+    "modified": "Updated and adapted for ContractFabrico format"
+  },
+  "preview": {
+    "sample_data": {
+      "client_name": "Marketing Solutions LLC",
+      "client_address": "500 Business Park Drive, San Diego, CA 92101",
+      "freelancer_name": "Michael Chen",
+      "freelancer_address": "123 Creative Way, Los Angeles, CA 90028",
+      "project_description": "Design and develop a responsive e-commerce website with product catalog, shopping cart, and payment integration",
+      "start_date": "2024-02-15",
+      "completion_date": "2024-04-15",
+      "total_fee": 8500,
+      "payment_schedule": "30% upon signing, 40% at midpoint, 30% upon completion",
+      "deliverables": "1. Website design mockups, 2. Fully functional website, 3. User documentation, 4. 30-day post-launch support"
+    }
+  },
+  "metadata": {
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "version": "1.0",
+    "downloads": 0,
+    "rating": 0
+  }
+}
