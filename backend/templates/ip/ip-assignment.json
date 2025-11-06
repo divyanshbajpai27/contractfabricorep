@@ -1,0 +1,112 @@
+{
+  "id": "ip-assignment-ca-2024",
+  "title": "Intellectual Property Assignment Agreement",
+  "category": "Intellectual Property",
+  "jurisdiction": "California",
+  "price": 18.99,
+  "description": "Comprehensive IP assignment agreement for transferring intellectual property rights. Includes patents, trademarks, copyrights, and trade secrets.",
+  "placeholders": [
+    {
+      "name": "assignor_name",
+      "label": "Assignor Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Legal name of person/entity assigning IP"
+    },
+    {
+      "name": "assignor_address",
+      "label": "Assignor Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Assignor's full address"
+    },
+    {
+      "name": "assignee_name",
+      "label": "Assignee Name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Legal name of person/entity receiving IP"
+    },
+    {
+      "name": "assignee_address",
+      "label": "Assignee Address",
+      "type": "text",
+      "required": true,
+      "placeholder": "Assignee's full address"
+    },
+    {
+      "name": "ip_description",
+      "label": "Intellectual Property Description",
+      "type": "text",
+      "required": true,
+      "placeholder": "Detailed description of the IP being assigned"
+    },
+    {
+      "name": "consideration_amount",
+      "label": "Consideration Amount",
+      "type": "number",
+      "required": true,
+      "placeholder": "Payment amount in USD",
+      "min": 0
+    },
+    {
+      "name": "effective_date",
+      "label": "Effective Date",
+      "type": "date",
+      "required": true,
+      "default": "today"
+    },
+    {
+      "name": "patent_applications",
+      "label": "Patent Applications",
+      "type": "text",
+      "required": false,
+      "placeholder": "List any related patent application numbers"
+    },
+    {
+      "name": "trademark_registrations",
+      "label": "Trademark Registrations",
+      "type": "text",
+      "required": false,
+      "placeholder": "List any related trademark registration numbers"
+    },
+    {
+      "name": "copyright_registrations",
+      "label": "Copyright Registrations",
+      "type": "text",
+      "required": false,
+      "placeholder": "List any related copyright registration numbers"
+    }
+  ],
+  "content": {
+    "html": "<h1>INTELLECTUAL PROPERTY ASSIGNMENT AGREEMENT</h1>\n\n<p>This Intellectual Property Assignment Agreement (the \"Agreement\") is made effective as of {{effective_date}} (the \"Effective Date\") by and between:</p>\n\n<p><strong>Assignor:</strong><br>\n{{assignor_name}}<br>\n{{assignor_address}}</p>\n\n<p>and</p>\n\n<p><strong>Assignee:</strong><br>\n{{assignee_name}}<br>\n{{assignee_address}}</p>\n\n<h2>RECITALS</h2>\n<p>WHEREAS, Assignor is the owner of certain intellectual property rights as described herein; and</p>\n<p>WHEREAS, Assignee wishes to acquire all rights, title, and interest in such intellectual property; and</p>\n<p>WHEREAS, Assignor wishes to assign such intellectual property to Assignee for the consideration set forth herein.</p>\n\n<p>NOW, THEREFORE, in consideration of the mutual covenants contained herein, the Parties agree as follows:</p>\n\n<h2>1. ASSIGNMENT</h2>\n<p>Assignor hereby irrevocably assigns, transfers, and conveys to Assignee all of Assignor's right, title, and interest in and to the following intellectual property (the \"Assigned IP\"):</p>\n\n<blockquote><em>{{ip_description}}</em></blockquote>\n\n{{#patent_applications}}<p><strong>Patent Applications:</strong> {{patent_applications}}</p>{{/patent_applications}}\n{{#trademark_registrations}}<p><strong>Trademark Registrations:</strong> {{trademark_registrations}}</p>{{/trademark_registrations}}\n{{#copyright_registrations}}<p><strong>Copyright Registrations:</strong> {{copyright_registrations}}</p>{{/copyright_registrations}}\n\n<h2>2. CONSIDERATION</h2>\n<p>In consideration for this assignment, Assignee shall pay Assignor the sum of ${{consideration_amount}} (the \"Consideration\"), payable upon execution of this Agreement.</p>\n\n<h2>3. FURTHER ASSURANCES</h2>\n<p>Assignor agrees to execute all documents and perform all acts reasonably necessary to perfect Assignee's title in the Assigned IP, including but not limited to executing patent, trademark, and copyright applications and assignments.</p>\n\n<h2>4. REPRESENTATIONS AND WARRANTIES</h2>\n<p>Assignor represents and warrants that: (a) Assignor is the sole owner of the Assigned IP; (b) The Assigned IP is free from all liens, encumbrances, or security interests; (c) Assignor has not previously assigned or licensed the Assigned IP to any third party; and (d) The Assigned IP does not infringe upon the intellectual property rights of any third party.</p>\n\n<h2>5. INDEMNIFICATION</h2>\n<p>Assignor shall indemnify, defend, and hold harmless Assignee from and against any and all claims, damages, losses, and expenses arising out of or related to any breach of Assignor's representations and warranties.</p>\n\n<h2>6. GOVERNING LAW</h2>\n<p>This Agreement shall be governed by and construed in accordance with the laws of the State of California.</p>\n\n<h2>7. ENTIRE AGREEMENT</h2>\n<p>This Agreement constitutes the entire agreement between the Parties with respect to the subject matter hereof and supersedes all prior agreements and understandings.</p>\n\n<h2>8. BINDING EFFECT</h2>\n<p>This Agreement shall be binding upon and inure to the benefit of the Parties and their respective successors and assigns.</p>\n\n<div class=\"signature-block\">\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Assignor</div>\n</div>\n<div class=\"signature-field\">\n<div class=\"signature-line\"></div>\n<div class=\"signature-label\">Assignee</div>\n</div>\n</div>\n\n<div class=\"date-field\">\n<div class=\"date-line\"></div>\n<div class=\"signature-label\">Date</div>\n</div>",
+    "docx_template": ""
+  },
+  "source": {
+    "url": "https://www.avodocs.com/ip-assignment-agreement-template",
+    "license": "MIT License",
+    "attribution": "Originally provided by Avodocs",
+    "modified": "Updated for California jurisdiction and ContractFabrico format"
+  },
+  "preview": {
+    "sample_data": {
+      "assignor_name": "Tech Innovations LLC",
+      "assignor_address": "123 Research Park Drive, Menlo Park, CA 94025",
+      "assignee_name": "Global Software Corporation",
+      "assignee_address": "500 Corporate Plaza, San Francisco, CA 94105",
+      "ip_description": "Patent-pending machine learning algorithm for natural language processing, including source code, documentation, and all related improvements and derivatives",
+      "consideration_amount": 250000,
+      "effective_date": "2024-02-01",
+      "patent_applications": "US Patent Application No. 17/123,456",
+      "trademark_registrations": "N/A",
+      "copyright_registrations": "TXu-1234567"
+    }
+  },
+  "metadata": {
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "version": "1.0",
+    "downloads": 0,
+    "rating": 0
+  }
+}
