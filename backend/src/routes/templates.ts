@@ -87,23 +87,6 @@ router.get('/:id', validateTemplateId, handleValidationErrors, async (req, res, 
     next(error)
   }
 })
-  try {
-    const categories = await templateService.getCategories()
-
-    res.json({
-      success: true,
-      data: categories,
-      timestamp: new Date().toISOString(),
-      requestId: req.headers['x-request-id'],
-    })
-  } catch (error) {
-    logger.error('Failed to get categories', {
-      error: error instanceof Error ? error.message : 'Unknown error',
-      requestId: req.headers['x-request-id'],
-    })
-    next(error)
-  }
-})
 
 // POST /api/preview - Generate document preview
 router.post('/preview', documentRateLimit, handleValidationErrors, async (req, res, next) => {
