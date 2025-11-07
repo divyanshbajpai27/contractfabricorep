@@ -35,6 +35,26 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+// GET /api/templates/categories - Get template categories
+router.get('/categories', async (req, res, next) => {
+  try {
+    const categories = await templateService.getCategories()
+
+    res.json({
+      success: true,
+      data: categories,
+      timestamp: new Date().toISOString(),
+      requestId: req.headers['x-request-id'],
+    })
+  } catch (error) {
+    logger.error('Failed to get categories', {
+      error: error instanceof Error ? error.message : 'Unknown error',
+      requestId: req.headers['x-request-id'],
+    })
+    next(error)
+  }
+})
+
 // GET /api/templates/:id - Get specific template
 router.get('/:id', validateTemplateId, handleValidationErrors, async (req, res, next) => {
   try {
@@ -62,26 +82,6 @@ router.get('/:id', validateTemplateId, handleValidationErrors, async (req, res, 
     logger.error('Failed to get template', {
       error: error instanceof Error ? error.message : 'Unknown error',
       templateId: req.params.id,
-      requestId: req.headers['x-request-id'],
-    })
-    next(error)
-  }
-})
-
-// GET /api/templates/categories - Get template categories
-router.get('/categories', async (req, res, next) => {
-  try {
-    const categories = await templateService.getCategories()
-
-    res.json({
-      success: true,
-      data: categories,
-      timestamp: new Date().toISOString(),
-      requestId: req.headers['x-request-id'],
-    })
-  } catch (error) {
-    logger.error('Failed to get categories', {
-      error: error instanceof Error ? error.message : 'Unknown error',
       requestId: req.headers['x-request-id'],
     })
     next(error)
