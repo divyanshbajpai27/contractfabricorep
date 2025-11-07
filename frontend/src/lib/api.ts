@@ -27,28 +27,29 @@ apiClient.interceptors.response.use(
 
 // Template API
 export const templateApi = {
-  getAll: async (): Promise<Template[]> => {
-    const response = await apiClient.get<ApiResponse<Template[]>>('/api/templates')
-    return response.data.data || []
+  getAll: async (query?: string): Promise<ApiResponse<Template[]>> => {
+    const url = query ? `/api/templates${query}` : '/api/templates'
+    const response = await apiClient.get<ApiResponse<Template[]>>(url)
+    return response.data
   },
 
-  getById: async (id: string): Promise<Template | null> => {
+  getById: async (id: string): Promise<ApiResponse<Template>> => {
     const response = await apiClient.get<ApiResponse<Template>>(`/api/templates/${id}`)
-    return response.data.data || null
+    return response.data
   },
 
-  getCategories: async (): Promise<string[]> => {
+  getCategories: async (): Promise<ApiResponse<string[]>> => {
     const response = await apiClient.get<ApiResponse<string[]>>('/api/templates/categories')
-    return response.data.data || []
+    return response.data
   },
 
   // Preview generation
-  generatePreview: async (templateId: string, formData: TemplateFormData): Promise<string> => {
-    const response = await apiClient.post<ApiResponse<{ previewUrl: string }>>('/api/preview', {
+  generatePreview: async (templateId: string, formData: TemplateFormData): Promise<ApiResponse<{ previewHtml: string }>> => {
+    const response = await apiClient.post<ApiResponse<{ previewHtml: string }>>('/api/preview', {
       templateId,
       formData,
     })
-    return response.data.data?.previewUrl || ''
+    return response.data
   },
 }
 
