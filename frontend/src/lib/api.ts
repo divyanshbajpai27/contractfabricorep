@@ -1,5 +1,6 @@
 import axios from 'axios'
 import type { ApiResponse, Template, Order, TemplateFormData, CheckoutSessionData } from '@/types'
+import { ErrorHandler, RetryHandler } from './errorHandler'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 
