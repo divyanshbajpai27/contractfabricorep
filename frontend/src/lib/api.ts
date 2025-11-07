@@ -21,8 +21,13 @@ apiClient.interceptors.request.use((config) => {
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.error('API Error:', error.response?.data || error.message)
-    return Promise.reject(error)
+    const appError = ErrorHandler.parseNetworkError(error)
+    ErrorHandler.logError(appError, {
+      url: error.config?.url,
+      method: error.config?.method,
+      baseURL: error.config?.baseURL,
+    })
+    return Promise.reject(appError)
   }
 )
 
