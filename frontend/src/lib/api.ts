@@ -1,5 +1,6 @@
 import axios from 'axios'
 import type { ApiResponse, Template, Order, TemplateFormData, CheckoutSessionData } from '@/types'
+import { ErrorHandler, RetryHandler } from './errorHandler'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 
@@ -20,27 +21,38 @@ apiClient.interceptors.request.use((config) => {
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.error('API Error:', error.response?.data || error.message)
-    return Promise.reject(error)
+    const appError = ErrorHandler.parseNetworkError(error)
+    ErrorHandler.logError(appError, {
+      url: error.config?.url,
+      method: error.config?.method,
+      baseURL: error.config?.baseURL,
+    })
+    return Promise.reject(appError)
   }
 )
 
 // Template API
 export const templateApi = {
   getAll: async (query?: string): Promise<ApiResponse<Template[]>> => {
-    const url = query ? `/api/templates${query}` : '/api/templates'
-    const response = await apiClient.get<ApiResponse<Template[]>>(url)
-    return response.data
+    return RetryHandler.executeWithRetry(async () => {
+      const url = query ? `/api/templates${query}` : '/api/templates'
+      const response = await apiClient.get<ApiResponse<Template[]>>(url)
+      return response.data
+    }, 2, 'templateApi.getAll')
   },
 
   getById: async (id: string): Promise<ApiResponse<Template>> => {
-    const response = await apiClient.get<ApiResponse<Template>>(`/api/templates/${id}`)
-    return response.data
+    return RetryHandler.executeWithRetry(async () => {
+      const response = await apiClient.get<ApiResponse<Template>>(`/api/templates/${id}`)
+      return response.data
+    }, 2, 'templateApi.getById')
   },
 
   getCategories: async (): Promise<ApiResponse<string[]>> => {
-    const response = await apiClient.get<ApiResponse<string[]>>('/api/templates/categories')
-    return response.data
+    return RetryHandler.executeWithRetry(async () => {
+      const response = await apiClient.get<ApiResponse<string[]>>('/api/templates/categories')
+      return response.data
+    }, 2, 'templateApi.getCategories')
   },
 
   // Preview generation
