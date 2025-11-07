@@ -233,7 +233,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({
 
   return (
     <div className={`space-y-6 ${className}`}>
-      {Object.entries(groupedPlaces).map(([groupName, group]) => (
+      {Object.entries(groupedPlaceholders).map(([groupName, group]) => (
         <div key={groupName}>
           {groupName === 'required' && group.length > 0 && (
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
