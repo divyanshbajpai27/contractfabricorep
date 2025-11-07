@@ -34,19 +34,25 @@ apiClient.interceptors.response.use(
 // Template API
 export const templateApi = {
   getAll: async (query?: string): Promise<ApiResponse<Template[]>> => {
-    const url = query ? `/api/templates${query}` : '/api/templates'
-    const response = await apiClient.get<ApiResponse<Template[]>>(url)
-    return response.data
+    return RetryHandler.executeWithRetry(async () => {
+      const url = query ? `/api/templates${query}` : '/api/templates'
+      const response = await apiClient.get<ApiResponse<Template[]>>(url)
+      return response.data
+    }, 2, 'templateApi.getAll')
   },
 
   getById: async (id: string): Promise<ApiResponse<Template>> => {
-    const response = await apiClient.get<ApiResponse<Template>>(`/api/templates/${id}`)
-    return response.data
+    return RetryHandler.executeWithRetry(async () => {
+      const response = await apiClient.get<ApiResponse<Template>>(`/api/templates/${id}`)
+      return response.data
+    }, 2, 'templateApi.getById')
   },
 
   getCategories: async (): Promise<ApiResponse<string[]>> => {
-    const response = await apiClient.get<ApiResponse<string[]>>('/api/templates/categories')
-    return response.data
+    return RetryHandler.executeWithRetry(async () => {
+      const response = await apiClient.get<ApiResponse<string[]>>('/api/templates/categories')
+      return response.data
+    }, 2, 'templateApi.getCategories')
   },
 
   // Preview generation
